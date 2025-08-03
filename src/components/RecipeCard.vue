@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+  <div class="bg-white rounded shadow-md overflow-hidden">
     <img :src="recipe.image_path" alt="Recipe Image" class="w-full h-48 object-cover">
     <div class="p-4">
-      <h2 class="text-xl font-bold mb-1">{{ recipe.title }}</h2>
-      <p class="text-sm text-gray-600">{{ recipe.category.name }}</p>
+      <h2 class="text-xl font-bold mb-1 text-black">{{ recipe.title }}</h2>
+      <p class="text-sm text-black">{{ recipe.category.name }}</p>
       <button
         @click="goToDetails(recipe.id)"
-        class="mt-2 inline-block text-blue-600 hover:underline"
+        class="mt-2 inline-block text-withe-600 hover:underline"
       >
         Ver receita
       </button>

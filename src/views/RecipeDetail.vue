@@ -1,6 +1,7 @@
 <template>
   <div class="container mx-auto p-6 max-w-3xl">
-    <router-link to="/" class="text-blue-600 hover:underline mb-4 block">← Voltar</router-link>
+    <router-link to="/" class="text-blue-600 hover:underline mb-4 block square">←</router-link>
+    <br />
     <img :src="recipe.image_path" alt="Imagem da receita" class="w-full h-64 object-cover rounded-xl mb-6" />
     <h1 class="text-3xl font-bold mb-2">{{ recipe.title }}</h1>
     <p class="text-sm text-gray-500 mb-4">Categoria: {{ recipe.category.name }}</p>
