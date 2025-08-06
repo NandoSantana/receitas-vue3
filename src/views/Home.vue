@@ -1,57 +1,14 @@
-<!-- <template>
-  <div class="flex gap-4">
-    <CategorySidebar @select="fetchByCategory" />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
-      <RecipeCard
-        v-for="recipe in recipes"
-        :key="recipe.id"
-        :recipe="recipe"
-        @click="goToDetail(recipe.id)"
-      />
-    </div>
-  </div>
-</template>
-
-<script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
-import { useRouter } from 'vue-router'
-
-import RecipeCard from '../components/RecipeCard.vue'
-import CategorySidebar from '../components/CategorySidebar.vue'
-
-const recipes = ref([])
-const router = useRouter()
-
-const fetchRecipes = async (categoryId = null) => {
-  const { data } = await axios.get('http://localhost:8000/api/recipes', {
-    params: { category_id: categoryId }
-  })
-  recipes.value = data.data
-}
-
-const fetchByCategory = (categoryId) => {
-  fetchRecipes(categoryId)
-}
-
-const goToDetail = (id) => {
-  router.push(`/recipe/${id}`)
-}
-
-onMounted(() => fetchRecipes())
-</script>
- -->
-
 <template>
   <div class="container mx-auto p-6 grid md:grid-cols-4 gap-6">
     <!-- Sidebar -->
     <aside class="md:col-span-1">
-      <h3 class="text-lg font-semibold mb-2">Categorias</h3>
+      <h2 class="text-lg font-semibold mb-2">Categorias</h2>
       <ul>
         <li
           v-for="category in categories"
           :key="category.id"
-          class="cursor-pointer mb-1 text-blue-700 hover:underline"
+          data-cy='category'
+          class="cursor-pointer mb-1 text-withe-600 hover:underline"
           @click="filterByCategory(category.id)"
         >
           {{ category.name }}
