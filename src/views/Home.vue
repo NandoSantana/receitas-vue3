@@ -99,6 +99,7 @@ const filterByCategory = (categoryId) => {
 };
 
 onMounted(() => {
+  document.title = 'Receitas';
   fetchCategories();
   fetchRecipes();
 });
