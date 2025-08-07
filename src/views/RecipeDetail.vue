@@ -19,11 +19,14 @@ const recipe = ref({ category: {} });
 
 const fetchRecipe = async () => {
   const res = await axios.get(`http://localhost:8000/api/recipes/${route.params.id}`);
-  recipe.value = res.data;
-  console.log('recipeDetail', recipe.value);
+  document.title = 'Receita: ' + res.data.title;
+  return recipe.value = res.data;
+
 };
 
-onMounted(fetchRecipe);
+onMounted(() => {
+  fetchRecipe()
+});
 </script>
 <style scoped>
 .btn_voltar{
